@@ -1,0 +1,15 @@
+version: '2'
+services:
+  db:
+    image: postgres:11.3
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    command: mix phx.server
+    volumes:
+      - ./personal_website/:/phoenix-website
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
