@@ -17,10 +17,9 @@ defmodule PersonalWebsiteWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    resources "/users", UserController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PersonalWebsiteWeb do
-  #   pipe_through :api
-  # end
+  
 end
