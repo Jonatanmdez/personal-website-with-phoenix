@@ -59,4 +59,6 @@ WORKDIR /phoenix-website
 
 EXPOSE 4000
 
-ENTRYPOINT [ "mix","phx.server" ]
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
