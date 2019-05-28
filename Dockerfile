@@ -56,3 +56,7 @@ ENV PHOENIX_VERSION 1.4.6
 RUN yes | mix archive.install hex phx_new $PHOENIX_VERSION
 
 WORKDIR /phoenix-website
+
+EXPOSE 4000
+
+ENTRYPOINT [ "mix","phx.server" ]
